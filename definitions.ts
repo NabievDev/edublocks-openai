@@ -10,7 +10,7 @@ Blockly.Blocks['import_openai'] = {
   }
 }
 
-Blockly.Blocks['OpenAI'] = {
+Blockly.Blocks['openai'] = {
   init: function() {
     this.appendDummyInput()
       .appendField("OpenAI(");

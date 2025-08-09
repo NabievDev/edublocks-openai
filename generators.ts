@@ -3,7 +3,7 @@ Blockly.Python['import_openai'] = function(block) {
   return code;
 }
 
-Blockly.Python['OpenAI'] = function(block) {
+Blockly.Python['openai'] = function(block) {
   const parameters = Blockly.Python.valueToCode(block, 'parameters', 0);
   const code = `OpenAI(${parameters})\n`;
   return code;
