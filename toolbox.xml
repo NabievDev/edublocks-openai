@@ -1,0 +1,21 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <category name="OpenAI" colour="#7c3aed">
+    <block type="oa_import_openai" />
+    <block type="oa_create_client">
+      <!-- переменная по умолчанию 'client' -->
+    </block>
+    <block type="oa_responses_create">
+      <value name="MODEL">
+        <shadow type="text">
+          <field name="TEXT">"gpt-5"</field>
+        </shadow>
+      </value>
+      <value name="INPUT">
+        <shadow type="text">
+          <field name="TEXT">"Write a short bedtime story about a unicorn."</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="oa_print_output_text" />
+  </category>
+</xml>
