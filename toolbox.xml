@@ -2,8 +2,8 @@
   <block type="oa_import_openai" />
   <block type="oa_openai">
     <value name="parameters">
-      <shadow type="text">
-        <field name="TEXT">api_key="YOUR_KEY"</field>
+      <shadow type="inline_text">
+        <field name="value">api_key="YOUR_KEY"</field>
       </shadow>
     </value>
   </block>
