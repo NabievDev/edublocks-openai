@@ -9,3 +9,16 @@ Blockly.Blocks['import_openai'] = {
     this.setColour(COLOR);
   }
 }
+
+Blockly.Blocks['OpenAI'] = {
+  init: function() {
+    this.appendDummyInput()
+      .appendField("OpenAI(");
+    this.appendValueInput("parameters")
+      .setCheck(null);
+    this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
+    this.setColour(COLOR);
+  }
+}

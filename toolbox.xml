@@ -1,4 +1,16 @@
 <category name="OpenAI" colour="#7c3aed">
   <label text="OpenAI"></label>
   <block type="import_openai"></block>
+  <block type="train_model">
+    <value name="parameters">
+        <shadow type="parameters">
+          <mutation color="#4a4b5f" items="1" limit="1" inputType="string" />
+          <value name="input_1">
+            <block type="variable_get">
+              <field name="variable_name">API_KEY</field>
+            </block>
+          </value>
+      </shadow>
+  </value>
+    </block>
 </category>
