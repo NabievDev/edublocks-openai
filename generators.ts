@@ -1,10 +1,19 @@
-Blockly.Python['import_openai'] = function(block) {
-  var code = 'from openai import OpenAI\n';
-  return code;
+// Один раз добавляем импорт
+function ensureOpenAIImport() {
+  if (!Blockly.Python.definitions_["oa_import_openai"]) {
+    Blockly.Python.definitions_["oa_import_openai"] = "from openai import OpenAI";
+  }
 }
 
-Blockly.Python['openai'] = function(block) {
-  const parameters = Blockly.Python.valueToCode(block, 'parameters', 0);
-  const code = `OpenAI(${parameters})\n`;
-  return code;
-}
+Blockly.Python['oa_import_openai'] = function(block) {
+  ensureOpenAIImport();
+  return ""; // импорт уже в definitions_
+};
+
+Blockly.Python['oa_openai'] = function(block) {
+  ensureOpenAIImport();
+  const params = Blockly.Python.valueToCode(block, 'parameters', Blockly.Python.ORDER_NONE) || "";
+  const inside = params ? params : "";
+  // это выражение: возвращаем [код, приоритет]
+  return [`OpenAI(${inside})`, Blockly.Python.ORDER_FUNCTION_CALL];
+};
