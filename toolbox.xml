@@ -7,4 +7,16 @@
       </shadow>
     </value>
   </block>
+  <block type="oa_client_send">
+    <value name="CLIENT">
+      <shadow type="variables_get">
+        <field name="VAR">client</field>
+      </shadow>
+    </value>
+    <value name="TEXT">
+      <shadow type="inline_text">
+        <field name="value">"Привет чат"</field>
+      </shadow>
+    </value>
+  </block>
 </category>

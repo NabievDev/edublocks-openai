@@ -27,4 +27,19 @@
       this.setTooltip("Создаёт объект клиента OpenAI. Пример параметров: api_key=\"...\"");
     }
   };
+
+  Blockly.Blocks['oa_client_send'] = {
+    init: function() {
+      this.appendValueInput("CLIENT").setCheck(null)
+        .appendField("клиент"); // переменная или вызов OpenAIWrapper()
+      this.appendDummyInput().appendField(".send(");
+      this.appendValueInput("TEXT").setCheck("String")
+        .appendField("текст");
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true); // это выражение — вернёт результат
+      this.setColour(COLOR);
+      this.setTooltip("Отправляет текст в ИИ и возвращает ответ");
+    }
+  };
 })();
